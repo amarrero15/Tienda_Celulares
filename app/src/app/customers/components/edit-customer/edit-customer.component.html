@@ -1,0 +1,28 @@
+<div style="width: 450px;height: 700px;">
+    <div class="text-center">
+        <label for="" class="text-center">Editar Cliente</label>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label body-Reg-L">Nombre del Cliente</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Apellido" [(ngModel)]="data.customerName">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label body-Reg-L">Direccion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="San José, Tibás" [(ngModel)]="data.customerAddress">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label body-Reg-L">Identificación</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="01230456" [(ngModel)]="data.DNI">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label body-Reg-L">Email</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo@email.com" [(ngModel)]="data.customerEmail">
+    </div>
+
+    <div class="text-center">
+        <button class="addButton" (click)="saveCliente()">Editar</button>
+    </div>
+</div>

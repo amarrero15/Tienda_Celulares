@@ -1,0 +1,46 @@
+<div>
+    <table mat-table [dataSource]="customers" class="mat-elevation-z0">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="userName">
+          <th  mat-header-cell *matHeaderCellDef class="heading" style="text-align: center;">Nombre Completo</th>
+          <td mat-cell class="userTableInfo" *matCellDef="let element"> {{element.NombreCliente}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="dni">
+          <th mat-header-cell *matHeaderCellDef class="heading" style="text-align: center;"> Cédula</th>
+          <td mat-cell class="userTableInfo" *matCellDef="let element"> {{element.CedulaCliente}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef  class="heading"style="text-align: center;"> Dirección </th>
+          <td mat-cell class="userTableInfo" *matCellDef="let element"> {{element.DireccionCliente}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef  class="heading"style="text-align: center;"> Email </th>
+          <td mat-cell class="userTableInfo" *matCellDef="let element"> {{element.EmailCliente}}</td>
+        </ng-container>
+
+
+                    <!-- Symbol Column -->
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef class="heading" style="text-align: center;"> Editar</th>
+          <td mat-cell class="text-center" *matCellDef="let element"> <button class="tableButton" (click)="editCustomer(element)"><mat-icon>edit</mat-icon></button></td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef class="heading" style="text-align: center;"> Eliminar</th>
+          <td mat-cell class="text-center" *matCellDef="let element"> <button class="tableButton" (click)="deleteCustomer(element)"><mat-icon>delete</mat-icon></button></td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="columns" class="heading" style="text-align: center;"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+      
+        <!-- Row shown when there is no matching data. -->
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>
